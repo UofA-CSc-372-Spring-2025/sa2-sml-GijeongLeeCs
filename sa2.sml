@@ -1,10 +1,10 @@
 (* Solutions to SA2 assignment, Intro to ML *)
 
-(* Name:                                    *)
-(* Time spent on HW6:
+(* Name:  Gijeong Lee                                *)
+(* Time spent: 3.5 hrs
 *)
 
-(* Collaborators and references:
+(* Collaborators and references: DeepSeek
 *)
 
 (* indicate planning to use the Unit testing module *)
@@ -22,16 +22,17 @@ val () =
 
 
 (**** Problem B ****)
-(*
+
 fun firstVowel _ = false
 
 val () =
     Unit.checkExpectWith Bool.toString "firstVowel 'ack' should be true"
     (fn () => firstVowel [#"a",#"c",#"k"])
     true
-*)
+
+
 (**** Problem C ****)
-(*
+
 fun reverse xs = xs
 
 val () =
@@ -39,9 +40,9 @@ val () =
   "reverse [1,2] should be [2,1]"
   (fn () => reverse [1,2])
   [2,1]
-*)
+
 (**** Problem D ****)
-(*
+
 fun minlist _ = 0
 
 val () =
@@ -54,27 +55,27 @@ val () =
   "minlist [1,2,3,4,0] should be 0"
   (fn () => minlist [1,2,3,4,0])
   0
-*)
+
 (**** Problem E ****)
-(*
+
 exception Mismatch
 
 fun zip _ = []
-*)
+
 (**** Problem F ****)
-(*
+
 fun concat xs = xs
-*)
+
 (**** Problem G ****)
-(*
+
 fun isDigit _    = false;
-*)
+
 (**** Problem H ****)
-(*
+
 fun isAlpha c = false
-*)
+
 (**** Problem I ****)
-(*
+
 fun svgCircle (cx, cy, r, fill) = "NOT IMPLEMENTED YET"
 
 val () =
@@ -82,9 +83,9 @@ val () =
   "svgCircle (200, 300, 100, \"red\") should return <circle cx=\"200\" cy=\"300\" r=\"100\" fill=\"red\" />"
   (fn () => svgCircle (200, 300, 100, "red"))
   "<circle cx=\"200\" cy=\"300\" r=\"100\" fill=\"red\" />";
-*)
+
 (**** Problem J ****)
-(*
+
 fun partition p (x :: xs) = ([],[])
 
 val () =
@@ -92,9 +93,9 @@ val () =
   "partition (fn x => x mod 2 = 0) [1, 2, 3, 4, 5] should return ([2, 4], [1, 3, 5])"
   (fn () => partition (fn x => x mod 2 = 0) [1, 2, 3, 4, 5])
   ([2, 4], [1, 3, 5]);
-*)
+
 
 (* Unit testing reporting *)
 
 val () = Unit.report()
-val () = Unit.reportWhenFailures ()  (* put me at the _end_ *)
+val () = Unit.reportWhenFailures ()  
