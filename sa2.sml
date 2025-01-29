@@ -1,8 +1,45 @@
+
+
+(* Your existing code follows here *)
 (*
 Name: Gijeong Lee
 Time Spent:  3.5 hours
 Collaborators: DeepSeek
 *)
+
+structure Unit =
+struct
+  fun checkExpectWith toString name test expected =
+    let
+      val result = test ()
+    in
+      if result = expected then
+        print ("Test passed: " ^ name ^ "\n")
+      else
+        print ("Test failed: " ^ name ^ "\nExpected: " ^ toString expected ^ "\nGot: " ^ toString result ^ "\n")
+    end
+
+  fun checkExnWith toString name test exnName =
+    let
+      val result = (test (); "No exception raised")
+        handle e => "Exception raised: " ^ exnName
+    in
+      if result = "Exception raised: " ^ exnName then
+        print ("Test passed: " ^ name ^ "\n")
+      else
+        print ("Test failed: " ^ name ^ "\nExpected exception: " ^ exnName ^ "\nGot: " ^ result ^ "\n")
+    end
+
+  fun boolString b = if b then "true" else "false"
+  fun intString i = Int.toString i
+  fun stringString s = "\"" ^ s ^ "\""
+  fun charString c = "\"" ^ str c ^ "\""
+  fun listString toString xs = "[" ^ String.concatWith ", " (List.map toString xs) ^ "]"
+  fun pairString toString1 toString2 (x, y) = "(" ^ toString1 x ^ ", " ^ toString2 y ^ ")"
+
+  fun reportWhenFailures () = ()
+end
+
 
 (***** Problem A *****)
 (* Define a function `mynull : 'a list -> bool` *)
